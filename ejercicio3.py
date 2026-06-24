@@ -1,11 +1,17 @@
 def mostrar_menu():
     print("********* MENÚ PRINCIPAL *********")
     print("1.- Agregar Reserva    | |")
+    print(" ")
     print("2.- Buscar Reserva     | |")
+    print(" ")
     print("3.- Eliminar Reserva   | |")
+    print(" ")
     print("4.- Confirmar Reservas | |")
+    print(" ")
     print("5.- Mostrar Reservas   | |")
-    print("6.- || Salir ||")
+    print(" ")
+    print("6.- Salir              | |")
+    print(" ")
     print("**********************************")
 
 def ingresar_opcion():
@@ -20,23 +26,23 @@ def ingresar_opcion():
             print("Debe ingresar un numero del 1 al 6.")
 
 def agregar_reserva(lista_r):
-    nombre_completo = input("ingrese su nombre completo")
+    nombre_completo = input("| | Ingrese su nombre completo: ")
     correcto = validar_huesped(nombre_completo)
     if not correcto: 
         print("El nombre no puede estar vacio.")
         return
     
-    numero_habitacion = input("ingrese la cantidad de habitaciones a reservar")
+    numero_habitacion = input("| | Ingrese la cantidad de habitaciones a reservar: ")
     correcto = validar_habitacion(numero_habitacion)
     if not correcto:
-        print("La habitacion debe ser un numero entero entre 1 y 200")
+        print("La habitacion debe ser un numero entero entre 1 y 200.")
         return
     
-    cant_noches = input("ingrese la cantidad de noches a hospedar")
+    cant_noches = input("| | Ingrese la cantidad de noches a hospedar: ")
     correcto = validar_noches(cant_noches)
 
     if not correcto:
-        print("La cantidad de noches debe ser mayor a cero")
+        print("La cantidad de noches debe ser mayor a cero.")
         return
     
     reserva = { 
@@ -46,7 +52,7 @@ def agregar_reserva(lista_r):
         "confirmada": False
     }
     lista_r.append(reserva)
-    print("Reserva agregada correctamente")
+    print("Reserva agregada correctamente.")
   
 def buscar_reserva(lista_r, huesped):
     for x in range(len(lista_r)):
